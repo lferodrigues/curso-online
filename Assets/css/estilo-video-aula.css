@@ -336,5 +336,12 @@ footer {
         transform: rotate(360deg);
     }
 }
+/* Mensagem de sucesso */
+.success-message {
+    color: #00c0ff;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
 
 
