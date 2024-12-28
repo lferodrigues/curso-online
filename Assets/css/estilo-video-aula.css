@@ -299,4 +299,42 @@ footer {
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona um leve sombreamento */
 }
+/* Tela de carregamento */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Spinner para o carregamento */
+.spinner {
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid #00c0ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+/* Animação do spinner */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
