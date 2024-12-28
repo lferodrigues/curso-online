@@ -1,57 +1,37 @@
-// Referências aos elementos
-const loginBtn = document.getElementById('login-btn');
-const registerBtn = document.getElementById('register-btn');
-const forgotPasswordLink = document.getElementById('forgot-password-link');
-const errorMessage = document.getElementById('error-message');
+document.getElementById("login-btn").addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-// Login
-loginBtn.addEventListener('click', () => {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            console.log("Login realizado com sucesso:", userCredential.user);
 
-    // Após login bem-sucedido
-firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-        fetch('mentoria.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erro ao carregar a página de mentoria.');
-                }
-                return response.text();
-            })
-            .then(html => {
-                document.getElementById('app-content').innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Erro ao carregar a página:', error);
-                errorMessage.style.display = 'block';
-                errorMessage.textContent = 'Não foi possível carregar a página de mentoria.';
-            });
-    })
-    .catch((error) => {
-        errorMessage.style.display = 'block';
-        errorMessage.textContent = error.message;
-    });
+            // Carregar conteúdo da mentoria.html
+            fetch("https://feliperodrigues.net.br/mentoria")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Erro ao carregar a mentoria.");
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Insere o conteúdo no elemento com ID "app-content"
+                    const appContent = document.getElementById("app-content");
+                    appContent.innerHTML = html;
 
-});
-
-// Redirecionar para Cadastro
-registerBtn.addEventListener('click', () => {
-    window.location.href = 'cadastro.html';
-});
-
-// Redirecionar para Recuperar Senha
-forgotPasswordLink.addEventListener('click', () => {
-    const email = document.getElementById('email').value;
-    if (!email) {
-        alert('Por favor, insira seu email para redefinir a senha.');
-        return;
-    }
-    firebase.auth().sendPasswordResetEmail(email)
-        .then(() => {
-            alert('Email de redefinição de senha enviado! Verifique sua caixa de entrada.');
+                    // Exibe o conteúdo e oculta a tela de login
+                    document.getElementById("login-screen").style.display = "none";
+                    appContent.style.display = "block";
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar mentoria:", error);
+                    alert(`Erro ao carregar mentoria: ${error.message}`);
+                });
         })
         .catch((error) => {
-            alert(error.message);
+            console.error("Erro ao fazer login:", error);
+
+            // Exibe uma mensagem de erro com alert
+            alert("Erro ao fazer login: E-mail e/ou senha incorretos. Por favor, tente novamente.");
         });
 });
