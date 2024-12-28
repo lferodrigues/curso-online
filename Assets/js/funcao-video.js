@@ -1,28 +1,32 @@
 // Atualiza o ano no rodapé
 document.getElementById('currentYear').textContent = new Date().getFullYear();
+
 // Desabilitar o botão direito do mouse
 document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
     alert("Função desabilitada!");
 });
 
-// Bloquear a tecla F12 e outras combinações comuns para ferramentas de desenvolvedor
+// Bloquear teclas relacionadas a ferramentas de desenvolvedor
 document.addEventListener("keydown", (event) => {
-    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || 
+    if (
+        event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && event.key === "I") || 
         (event.ctrlKey && event.shiftKey && event.key === "J") || 
-        (event.ctrlKey && event.key === "U")) {
+        (event.ctrlKey && event.key === "U") || 
+        (event.ctrlKey && event.key === "S") // Bloquear Ctrl+S
+    ) {
         event.preventDefault();
         alert("Ação bloqueada!");
     }
 });
-
 
 // Função para carregar um vídeo no iframe
 function changeVideo(videoSrc) {
     const iframe = document.querySelector('.player iframe');
     iframe.src = videoSrc;
 }
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+
 document.addEventListener("DOMContentLoaded", function () {
     // Função para remover a classe 'selected' de todos os itens da lista
     function clearSelected() {
