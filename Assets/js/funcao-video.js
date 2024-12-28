@@ -1,9 +1,21 @@
 // Atualiza o ano no rodapé
 document.getElementById('currentYear').textContent = new Date().getFullYear();
-// Bloqueia o botão direito
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
+// Desabilitar o botão direito do mouse
+document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    alert("Função desabilitada!");
 });
+
+// Bloquear a tecla F12 e outras combinações comuns para ferramentas de desenvolvedor
+document.addEventListener("keydown", (event) => {
+    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || 
+        (event.ctrlKey && event.shiftKey && event.key === "J") || 
+        (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+        alert("Ação bloqueada!");
+    }
+});
+
 
 // Função para carregar um vídeo no iframe
 function changeVideo(videoSrc) {
