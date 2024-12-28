@@ -1,11 +1,5 @@
-// Função para carregar um vídeo no iframe
-function changeVideo(videoSrc) {
-    const iframe = document.querySelector('.player iframe');
-    iframe.src = videoSrc;
-}
-document.getElementById('currentYear').textContent = new Date().getFullYear();
 document.addEventListener("DOMContentLoaded", function () {
-    // Função para remover a classe 'selected' de todos os itens da lista
+    // Remove a classe 'selected' de todos os itens
     function clearSelected() {
         const videoItems = document.querySelectorAll(".video-list li");
         videoItems.forEach(item => {
@@ -13,28 +7,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Função para mudar o vídeo no player
-    function changeVideo(videoUrl) {
+    // Muda o vídeo no player e atualiza a seleção
+    function changeVideo(videoUrl, element) {
         const player = document.querySelector(".player iframe");
         player.src = videoUrl;
 
-        // Marca o item selecionado como azul
         clearSelected();
-        event.target.classList.add("selected");
+        element.classList.add("selected");
     }
 
-    // Adiciona o evento onclick a todos os vídeos
+    // Adiciona o evento click aos itens
     const videoItems = document.querySelectorAll(".video-list li");
     videoItems.forEach(item => {
-        item.addEventListener("click", function (event) {
-            const videoUrl = this.getAttribute("onclick").match(/'([^']+)'/)[1];
-            changeVideo(videoUrl);
+        item.addEventListener("click", function () {
+            const videoUrl = this.dataset.video; // Obtém a URL do atributo data-video
+            changeVideo(videoUrl, this);
         });
     });
 
-    // Marca o primeiro vídeo como selecionado ao carregar a página
+    // Seleciona o primeiro vídeo ao carregar
     const firstVideo = document.querySelector(".video-list li");
     if (firstVideo) {
         firstVideo.classList.add("selected");
+        const player = document.querySelector(".player iframe");
+        player.src = firstVideo.dataset.video; // Garante que o player exiba o primeiro vídeo.
     }
 });
+
+// Atualiza o ano no rodapé
+document.getElementById('currentYear').textContent = new Date().getFullYear();
