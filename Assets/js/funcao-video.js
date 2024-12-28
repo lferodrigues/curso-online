@@ -1,10 +1,9 @@
-
 // Função para carregar um vídeo no iframe
 function changeVideo(videoSrc) {
     const iframe = document.querySelector('.player iframe');
     iframe.src = videoSrc;
 }
-
+document.getElementById('currentYear').textContent = new Date().getFullYear();
 document.addEventListener("DOMContentLoaded", function () {
     // Função para remover a classe 'selected' de todos os itens da lista
     function clearSelected() {
