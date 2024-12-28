@@ -29,5 +29,17 @@ document.addEventListener("keydown", (event) => {
     });
     console.log('%c', element);
 })();
+document.addEventListener('keydown', function(event) {
+    // Bloqueia Ctrl+S (salvar)
+    if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();
+        alert('A combinação Ctrl+S está desabilitada!');
+    }
+    // Bloqueia Ctrl+U (ver código-fonte)
+    if (event.ctrlKey && event.key === 'u') {
+        event.preventDefault();
+        alert('A combinação Ctrl+U está desabilitada!');
+    }
+});
       // Atualiza o ano no rodapé
       document.getElementById('currentYear').textContent = new Date().getFullYear();
