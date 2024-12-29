@@ -259,7 +259,7 @@ footer {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    background-color: #00c0ff;
+    background-color: #039fd3;
     color: #fff;
     transition: background-color 0.3s;
 }
@@ -294,7 +294,7 @@ footer {
 /* Caixa com borda arredondada */
 .bordered-box {
     padding: 20px;
-    border: 2px solid #00c0ff; /* Cor azul do botão Login */
+    border: 2px solid #ff0037; /* Cor azul do botão Login */
     border-radius: 10px; /* Borda arredondada */
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona um leve sombreamento */
