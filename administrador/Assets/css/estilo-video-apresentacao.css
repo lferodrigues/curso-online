@@ -1,5 +1,18 @@
 /* Estilo Geral */
 body {
+	body p,
+body li,
+body span,
+body h1,
+body h2,
+body h3 {
+    text-align: justify; /* Alinha o texto de forma justificada */
+}
+
+/* Justificação para listas */
+ul {
+    text-align: justify; /* Garante que o texto de itens de lista também fique justificado */
+}
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -199,17 +212,25 @@ body {
         height: 200px; /* Ajuste para telas menores */
     }
 
-    .video-wrapper {
-        padding-top: 56.25%; /* Ajusta a proporção do vídeo */
-        width: 90%; /* Ajusta a largura do vídeo */
-        margin: 0 auto; /* Centraliza o vídeo na tela */
-        height: 250px; /* Define uma altura fixa para o vídeo */
-    }
+   .video-wrapper {
+    display: flex; /* Define o contêiner como flexbox */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    width: 100%; /* Ajusta a largura do vídeo ao contêiner */
+    height: 250px; /* Define uma altura fixa para o contêiner */
+    padding: 0; /* Remove preenchimentos extras */
+    margin: 2 auto; /* Garante que o contêiner seja centralizado horizontalmente */
+    background-color: #000; /* Cor de fundo para destacar o vídeo, opcional */
+    box-sizing: border-box; /* Inclui borda e padding no cálculo da largura e altura */
+	 transform: translateX(); /* Move o vídeo 50px para a direita */
+}
 
-    .video-wrapper iframe {
-        width: 100%; /* Garante que o iframe ocupe toda a largura do contêiner */
-        height: 100%; /* Garante que o iframe ocupe toda a altura do contêiner */
-    }
+.video-wrapper iframe {
+    width: 100%; /* Garante que o iframe ocupe toda a largura do contêiner */
+    height: 100%; /* Garante que o iframe ocupe toda a altura do contêiner */
+    border-radius: 8px; /* Bordas arredondadas para um visual similar à logo, opcional */
+    border: none; /* Remove bordas do iframe */
+}
 
     .hero {
         width: 100%;
