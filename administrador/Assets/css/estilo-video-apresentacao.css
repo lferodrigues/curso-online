@@ -124,23 +124,23 @@ ul {
 
 /* Para os vídeos dentro da .video-wrapper */
 .video-wrapper {
-    position: relative;
-    width: 50%; /* Reduzir a largura para se aproximar do tamanho desejado */
-    padding-top: 88.89%; /* Ajuste da proporção para 9:16 (1080x1920) */
-    background-color: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 0 auto; /* Centraliza o vídeo */
+    display: flex; /* Flexbox para centralização */
+    justify-content: center; /* Alinhamento horizontal */
+    align-items: center; /* Alinhamento vertical */
+    width: 40%; /* Reduz a largura para 80% do contêiner principal */
+    max-width: 760px; /* Limita a largura máxima */
+    height: 300px; /* Define uma altura fixa menor */
+    padding: 0;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    background-color: #000; /* Fundo opcional */
+    box-sizing: border-box;
 }
 
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: inherit;
+    width: 100%; /* Responsivo dentro do contêiner */
+    height: 100%; /* Responsivo dentro do contêiner */
+    border: none; /* Remove borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
 }
 
 /* Seção de Chamada para Ação */
@@ -212,25 +212,17 @@ ul {
         height: 200px; /* Ajuste para telas menores */
     }
 
-   .video-wrapper {
-    display: flex; /* Define o contêiner como flexbox */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    width: 100%; /* Ajusta a largura do vídeo ao contêiner */
-    height: 250px; /* Define uma altura fixa para o contêiner */
-    padding: 0; /* Remove preenchimentos extras */
-    margin: 2 auto; /* Garante que o contêiner seja centralizado horizontalmente */
-    background-color: #000; /* Cor de fundo para destacar o vídeo, opcional */
-    box-sizing: border-box; /* Inclui borda e padding no cálculo da largura e altura */
-	 transform: translateX(); /* Move o vídeo 50px para a direita */
-}
+ .video-wrapper {
+        width: 90%; /* Ajuste da largura para mobile */
+        max-width: 320px; /* Limite máximo da largura no mobile */
+        aspect-ratio: 4 / 3; /* Define a proporção de 4:3 */
+        height: auto; /* Altura ajustada automaticamente com base na largura */
+    }
 
-.video-wrapper iframe {
-    width: 100%; /* Garante que o iframe ocupe toda a largura do contêiner */
-    height: 100%; /* Garante que o iframe ocupe toda a altura do contêiner */
-    border-radius: 8px; /* Bordas arredondadas para um visual similar à logo, opcional */
-    border: none; /* Remove bordas do iframe */
-}
+    .video-wrapper iframe {
+        width: 100%; /* Ocupa toda a largura do contêiner */
+        height: 100%; /* Mantém a proporção definida pelo contêiner */
+    }
 
     .hero {
         width: 100%;
