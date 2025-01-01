@@ -266,3 +266,40 @@ footer {
     width: 100px;
     margin-right: 10px;
 }
+.social-icons {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os ícones */
+    margin-top: 20px;
+}
+
+.social-icons .icon {
+    color: white;
+    font-size: 18px; /* Tamanho dos ícones */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    transform: scale(1.1); /* Aumenta levemente o tamanho no hover */
+}
+
+/* Cores personalizadas ao passar o mouse */
+.social-icons .instagram:hover {
+    color: #E4405F; /* Cor do Instagram */
+}
+
+.social-icons .linkedin:hover {
+    color: #0077B5; /* Cor do LinkedIn */
+}
+
+.social-icons .twitter:hover {
+    color: #1DA1F2; /* Azul do Twitter */
+}
+
+.social-icons .youtube:hover {
+    color: #FF0000; /* Vermelho do YouTube */
+}
+
+.social-icons .website:hover {
+    color: #00A86B; /* Verde para o ícone do site */
+}
