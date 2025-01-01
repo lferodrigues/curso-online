@@ -20,6 +20,36 @@
     <link rel="icon" href="Assets/img/logo.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="Assets/img/logo.ico" type="image/x-icon" />
 </head>
+<script>
+    var images = [
+            "./administrador/Assets/img/felipe.jpeg",
+            "./administrador/Assets/img/premio.jpg",
+            "./administrador/Assets/img/office.jpeg",
+            "./administrador/Assets/img/ia.jpeg",
+            "./administrador/Assets/img/senai.jpeg",
+            "./administrador/Assets/img/CARD MODELO.png",
+        ];
+        var currentIndex = 0;
+
+        function changeImage() {
+            var img = document.getElementById("slideshow");
+
+            // Inicia o fade-out
+            img.style.opacity = 0;
+
+            setTimeout(function () {
+                // Após o fade-out, troca a imagem
+                currentIndex = (currentIndex + 1) % images.length;
+                img.src = images[currentIndex];
+
+                // Inicia o fade-in
+                img.style.opacity = 1;
+            }, 1000); // Tempo do fade-out (1s)
+        }
+
+        // Troca a imagem a cada 5 segundos
+        setInterval(changeImage, 5000);
+</script>
 <body>
     <main>
         <!-- Seção de Destaque -->
@@ -56,7 +86,7 @@
         <!-- Sobre o Instrutor -->
         <section class="content-section">
             <div class="image-content">
-                <a href="https://feliperodrigues.net"> <img src="./Assets/img/felipe.jpg" alt="Foto do Instrutor"> </a>
+                <a href="https://feliperodrigues.net"> <img  src="./administrador/Assets/img/felipe.jpeg" id="slideshow" alt="Foto do Instrutor"> </a>
             </div>
             <div class="text-content">
                 <h2>Sobre o Instrutor</h2>
