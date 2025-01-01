@@ -251,6 +251,16 @@ footer {
     align-items: center;
     color: #fff;
 }
+#slideshow {
+    width: 78%; /* Ajuste conforme o tamanho desejado */
+    max-width: 600px; /* Limite de largura */
+    height: auto; /* Ajusta altura proporcional */
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px; /* Arredondamento opcional */
+    transition: opacity 1s ease-in-out; /* Efeito de fade-in e fade-out */
+    opacity: 1; /* Inicialmente visível */
+}
 
 .footer-content img {
     width: 50px;
