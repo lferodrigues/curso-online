@@ -251,6 +251,11 @@ footer {
     align-items: center;
     color: #fff;
 }
+
+.footer-content img {
+    width: 100px;
+    margin-right: 10px;
+}
 #slideshow {
     width: 78%; /* Ajuste conforme o tamanho desejado */
     max-width: 600px; /* Limite de largura */
@@ -260,11 +265,6 @@ footer {
     border-radius: 12px; /* Arredondamento opcional */
     transition: opacity 1s ease-in-out; /* Efeito de fade-in e fade-out */
     opacity: 1; /* Inicialmente visível */
-}
-
-.footer-content img {
-    width: 100px;
-    margin-right: 10px;
 }
 .social-icons {
     display: flex;
