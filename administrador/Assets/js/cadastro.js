@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Redirecionar para login
     backToLoginBtn.addEventListener("click", () => {
-        window.location.href = "https://feliperodrigues.net.br";
+        window.location.href = "https://feliperodrigues.net.br/login";
     });
 
     // Spin animation
